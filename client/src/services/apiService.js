@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// const apiUrl = "https://intrepidscouting.onrender.com";
+const apiUrl = "https://dambarsscout.onrender.com";
 // const apiUrl = "http://localhost:3000";
 
 
