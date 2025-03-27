@@ -9,5 +9,34 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en', // original language
+          includedLanguages: 'fr', // limit to French
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+      (function waitAndHideIframe() {
+        const interval = setInterval(() => {
+          const skipTranslateDiv = document.querySelector('.skiptranslate');
+          if (skipTranslateDiv) {
+            const iframe = skipTranslateDiv.querySelector('iframe');
+            if (iframe) {
+              iframe.style.display = 'none';
+              clearInterval(interval);
+            }
+          }
+        }, 500);
+      })();
+    </script>
   </body>
 </html>

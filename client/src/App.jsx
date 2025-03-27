@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SignUp from './components/SignUp';
 
 const App = () => {
+  useEffect(() => {
+    const tryTranslate = () => {
+      const select = document.querySelector("select.goog-te-combo");
+      if (select) {
+        select.value = 'fr'; // Set to French
+        select.dispatchEvent(new Event("change"));
+      } else {
+        setTimeout(tryTranslate, 500); // Retry until available
+      }
+    };
+
+    tryTranslate();
+  }, []);
 
   return (
     <Router>
