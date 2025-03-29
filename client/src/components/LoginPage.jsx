@@ -47,12 +47,12 @@ const LoginPage = () => {
     <div className="login-container">
       <div className="welcome-logo">
         <img src={logo} alt="" />
-        <h1>DIAMBARS FC</h1>
-        <h2>Scouting Database</h2>
+        <h1>Diambars FC</h1>
+        <h2>Scouts Database</h2>
       </div>
       <div className="login-box">
         {loading && <LoadingScreen/>}
-        <h1>Scout Login</h1>
+        <h1>Admin Login</h1>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <input
